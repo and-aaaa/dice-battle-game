@@ -7,6 +7,7 @@ class warrior(Character):
     # 오버라이딩
    def attack(self, other):
     # 주사위 값 받아오기
+    damage = 0
     dice_result = self.roll()
     dice1 = int(dice_result[0])
     dice2 = int(dice_result[1])
@@ -20,16 +21,18 @@ class warrior(Character):
         other.hp -= damage
         #오버라이딩
     def heal(self):
+        heal = 0
       # 주사위 값 받아오기
         dice_result = self.roll()
         dice1 = int(dice_result[0])
         dice2 = int(dice_result[1])
         #주사위 판정후 힐 결정
         if dice1 == dice2:
-            hp += 50
-            if hp > max_hp:
-                hp = max_hp
+            heal += 50
         else:
-            hp = hp + dice1 + dice2
-            if hp > max_hp:
-                hp = max_hp
+            heal = heal + dice1 + dice2
+        # 힐 적용
+        if hp + heal > max_hp:
+            hp = max_hp
+        else:
+            hp += heal
