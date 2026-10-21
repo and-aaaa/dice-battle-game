@@ -11,7 +11,7 @@ class Character():
 
   def roll(self):
       dice_num = self.dice_num
-      for i in range (dice_num):
+      for i in range (dice_num):                    # 캐릭터에 따라 주사위 추가 굴림이 발생할 수 있음. 
           dice_result.append(random.randint(1, 6))
       return dice_result
 
