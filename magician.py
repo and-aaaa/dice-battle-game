@@ -58,7 +58,21 @@ class Magician(Character):
         # 회복02
         elif (all(idx % 2 == 0 for idx in dice_result)  # 짝수
               or all(n % 2 == 1 for n in dice_result)): # 홀수
+            temp_hp = self.hp
             if (self.hp <= 20):
                 self.hp += 30
-            print("체력이 ", self.hp, "만큼 회복되었습니다~!")
+            else:
+                self.hp = 50
+            print("체력이 ", self.hp - temp_hp, "만큼 회복되었습니다~!")
+            print("현재 체력: ", self.hp)
+
+        # 회복03
+        else:
+            temp_hp = self.hp
+            self.hp += sum(dice_result)
+
+            if self.hp > self.max_hp:
+                self.hp = self.max_hp
+
+            print("체력이", self.hp - temp_hp, "만큼 회복되었습니다~!")
             print("현재 체력: ", self.hp)
