@@ -107,10 +107,10 @@ class Magician(Character):
 
 
 class Rogue (Character):
-    def __init__(self, name):
+    def __init__(self):
+        self.name = "Rogue"
         self.hp = 75
         self.max_hp = 75
-        self.name = name
         self.dice_num = 2            
 # 기존 로직과 완전히 동일
 #    def roll(self):
