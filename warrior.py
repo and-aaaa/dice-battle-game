@@ -9,15 +9,18 @@ class warrior(Character):
         damage = 0
     # 주사위 굴리기
         dice_result = self.roll()
+        print(self.name, "님이 주사위", dice_result, "을 굴렸습니다.")
         dice1 = int(dice_result[0])
         dice2 = int(dice_result[1])
     # 주사위값 판정후 데미지 결정
     # 주사위값이 같으면 합산후 2배 대미지
         if dice1 == dice2:
             damage = dice1 * 4
-            print("주사위 값이 같습니다! 2배 대미지!")
+            print("두 주사위 값이 같습니다! 2배 대미지!")
         else:
+            print("평타입니다")
             damage = sum(dice_result)
+        print("적용 대미지는", damage, "입니다")
 
     #데미지 적용
         other.hp -= damage
@@ -32,11 +35,14 @@ class warrior(Character):
         # 주사위값이 같으면 50추가 힐
         if dice1 == dice2:
             heal += 50
-            print("주사위 값이 같습니다! 50 추가 힐!")
+            print("두 주사위 값이 같습니다! 50 추가 힐!")
         else:
             heal = heal + dice1 + dice2
+            print("보통 힐입니다")
         # 힐 적용
         if hp + heal > max_hp:
             self.hp = max_hp
         else:
             self.hp += heal
+        print("적용 힐량은", heal,"입니다")
+        print("현재 체력: ", self.hp)
