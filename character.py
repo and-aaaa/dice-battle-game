@@ -19,6 +19,7 @@ class Character():
   def attack(self, other):
       dice_result = self.roll()
       damage = sum(dice_result)
+      # Line 21 나중에 수정 필요 (damage = sum(dice_result))
       other.hp -= damage
 
   def heal(self):
