@@ -1,6 +1,6 @@
 import random
 
-dice = [1, 2, 3, 4, 5, 6]
+dice_result = []
 
 class Character():
   def __init__(self):
@@ -9,7 +9,12 @@ class Character():
     self.name = name
     self.dice_num = dice_num
 
-  def roll(self, dice_num):
+  def roll(self):
+      dice_num = self.dice_num
+      for i in range (dice_num):
+          dice_result.append(random.randint(1, 6))
+      return dice_result
+
     
   def attack(self):
     damage = sum(
