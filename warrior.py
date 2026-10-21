@@ -33,6 +33,6 @@ class warrior(Character):
             heal = heal + dice1 + dice2
         # 힐 적용
         if hp + heal > max_hp:
-            hp = max_hp
+            self.hp = max_hp
         else:
-            hp += heal
+            self.hp += heal
