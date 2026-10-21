@@ -11,6 +11,17 @@ class Game():
     enemy_class = 0
     player = "player"
 
+    def enemy_action(self):
+        action = random.choice(['공격', '회복'])
+        print("적이", action, "을 하겠습니다.")
+
+    if action == '공격':
+        self.enemy.attack(self.player)
+    else:
+        self.enemy.heal() 
+
+    print(enemy_action('self'))
+
     def display(self):
         player_hp = self.player.hp
         player_max_hp = self.player.max_hp 
