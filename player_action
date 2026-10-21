@@ -1,0 +1,7 @@
+#유저에게 활동을 입력받아 유저 객체가 속하는 클레스에서 해당하는 함수를 실행하는 함수
+    def player_action(self):
+        userCho = input()
+        if userCho == "공격":
+            userClass.attack() 
+        elif userCho == "회복":
+            userClass.heal()
