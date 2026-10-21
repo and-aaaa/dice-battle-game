@@ -12,8 +12,10 @@ class warrior(Character):
         dice1 = int(dice_result[0])
         dice2 = int(dice_result[1])
     # 주사위값 판정후 데미지 결정
+    # 주사위값이 같으면 합산후 2배 대미지
         if dice1 == dice2:
             damage = dice1 * 4
+            print("주사위 값이 같습니다! 2배 대미지!")
         else:
             damage = sum(dice_result)
 
@@ -26,9 +28,11 @@ class warrior(Character):
         dice_result = self.roll()
         dice1 = int(dice_result[0])
         dice2 = int(dice_result[1])
-        #주사위 판정후 힐 결정
+        # 주사위 판정후 힐량 결정
+        # 주사위값이 같으면 50추가 힐
         if dice1 == dice2:
             heal += 50
+            print("주사위 값이 같습니다! 50 추가 힐!")
         else:
             heal = heal + dice1 + dice2
         # 힐 적용
