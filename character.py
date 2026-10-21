@@ -1,7 +1,5 @@
 import random
 
-dice_result = []
-
 class Character():
   def __init__(self, hp, max_hp, name, dice_num):
     self.hp = hp
@@ -9,6 +7,13 @@ class Character():
     self.name = name
     self.dice_num = dice_num
 
+  def roll(self):      
+      dice_num = self.dice_num
+      dice_result = []
+      for i in range (dice_num):                    # 캐릭터에 따라 주사위 추가 굴림이 발생할 수 있음. 
+          dice_result.append(random.randint(1, 6))
+      return dice_result
+  
   def roll(self):
       dice_num = self.dice_num
       for i in range (dice_num):                    # 캐릭터에 따라 주사위 추가 굴림이 발생할 수 있음. 
