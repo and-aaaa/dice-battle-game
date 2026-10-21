@@ -2,6 +2,6 @@
     def player_action(self):
         userCho = input()
         if userCho == "공격":
-            userClass.attack() 
+            player.attack() 
         elif userCho == "회복":
-            userClass.heal()
+            player.heal()
